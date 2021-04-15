@@ -7,7 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import WelcomePages.SignalDisplay;
+import WelcomePages_Admin.SignalDisplay;
 import densities.DensitiesCalc;
 
 import java.awt.Color;

@@ -1,4 +1,4 @@
-package WelcomePages;
+package WelcomePages_Admin;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -12,6 +12,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import SignalPackage.Density_Signal;
+import SignalPackage.ManualSignal;
 
 import javax.swing.JButton;
 import java.awt.Font;
@@ -58,6 +59,11 @@ public class SignalDisplay extends JFrame {
 		contentPane.add(lblNewLabel);
 		
 		JButton btnManualSignal = new JButton("Manual Signal");
+		btnManualSignal.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				mansig(e);
+			}
+		});
 		btnManualSignal.setForeground(Color.WHITE);
 		btnManualSignal.setFont(new Font("Tempus Sans ITC", Font.BOLD, 33));
 		btnManualSignal.setBackground(new Color(37, 37, 113));
@@ -80,13 +86,13 @@ public class SignalDisplay extends JFrame {
 		JLabel lblNewLabel_1 = new JLabel("Note : ");
 		lblNewLabel_1.setFont(new Font("Tempus Sans ITC", Font.BOLD, 19));
 		lblNewLabel_1.setForeground(Color.WHITE);
-		lblNewLabel_1.setBounds(342, 635, 79, 26);
+		lblNewLabel_1.setBounds(304, 635, 79, 26);
 		contentPane.add(lblNewLabel_1);
 		
-		JLabel lblNewLabel_1_1 = new JLabel("Manual signals should be only used in case of any emergency");
+		JLabel lblNewLabel_1_1 = new JLabel("Manual signals should be used only in the case of an emergency");
 		lblNewLabel_1_1.setForeground(Color.WHITE);
 		lblNewLabel_1_1.setFont(new Font("Tempus Sans ITC", Font.BOLD, 19));
-		lblNewLabel_1_1.setBounds(417, 635, 512, 26);
+		lblNewLabel_1_1.setBounds(366, 635, 523, 26);
 		contentPane.add(lblNewLabel_1_1);
 		
 		JButton btnBack = new JButton("Back");
@@ -100,6 +106,14 @@ public class SignalDisplay extends JFrame {
 		btnBack.setBackground(new Color(37, 37, 113));
 		btnBack.setBounds(47, 23, 114, 29);
 		contentPane.add(btnBack);
+	}
+
+	protected void mansig(ActionEvent e) {
+		// TODO Auto-generated method stub
+		ManualSignal ms = new ManualSignal();
+		ms.setVisible(true);
+		this.dispose();
+		
 	}
 
 	protected void back(ActionEvent e) {

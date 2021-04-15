@@ -1,4 +1,4 @@
-package WelcomePages;
+package WelcomePages_Admin;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -88,7 +88,7 @@ public class WelcomeWindow extends JFrame {
 		btnNewButton.setBounds(417, 450, 444, 70);
 		contentPane.add(btnNewButton);
 		
-		JButton btnFineManagement = new JButton("Fine Management");
+		JButton btnFineManagement = new JButton("Challan Management");
 		btnFineManagement.setForeground(Color.WHITE);
 		btnFineManagement.setFont(new Font("Tempus Sans ITC", Font.BOLD, 33));
 		btnFineManagement.setBackground(new Color(37, 37, 113));
