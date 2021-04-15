@@ -9,6 +9,9 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import FinePackage.FineDisplayPage;
+
 import javax.swing.JLabel;
 import java.awt.Color;
 import java.awt.Font;
@@ -89,12 +92,25 @@ public class WelcomeWindow extends JFrame {
 		contentPane.add(btnNewButton);
 		
 		JButton btnFineManagement = new JButton("Challan Management");
+		btnFineManagement.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				chall(e);
+			}
+		});
 		btnFineManagement.setForeground(Color.WHITE);
 		btnFineManagement.setFont(new Font("Tempus Sans ITC", Font.BOLD, 33));
 		btnFineManagement.setBackground(new Color(37, 37, 113));
 		btnFineManagement.setBounds(417, 542, 444, 70);
 		contentPane.add(btnFineManagement);
 	
+	}
+
+	protected void chall(ActionEvent e) {
+		// TODO Auto-generated method stub
+		FineDisplayPage fdp = new FineDisplayPage();
+		fdp.setVisible(true);
+		this.dispose();
+		
 	}
 
 	protected void signalDis(ActionEvent e) {

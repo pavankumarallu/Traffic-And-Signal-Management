@@ -305,7 +305,7 @@ public class FineDisplayPage extends JFrame {
 		btnAdd.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				ChallanModel challan = new ChallanModel();
-				if (Namefield.getText().equals("") && Vehiclefiled.getText().equals("") && phonefield.getText().equals("")) {
+				if (!Namefield.getText().isEmpty() && !Vehiclefiled.getText().isEmpty() && !phonefield.getText().isEmpty()) {
 					if (!comboBox.getSelectedItem().toString().equals("Select the offense")) {
 						challan.setName(Namefield.getText());
 						challan.setVehicleno(Vehiclefiled.getText());

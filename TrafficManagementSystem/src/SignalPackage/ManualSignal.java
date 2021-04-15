@@ -5,6 +5,9 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
+
+import WelcomePages_Admin.SignalDisplay;
+
 import java.awt.Color;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -25,16 +28,16 @@ public class ManualSignal extends JFrame {
     /**
      * Launch the application.
      */
-    public static void main(String[] args) {
-        try {
-            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-            UIManager.setLookAndFeel("com.jtattoo.plaf.aluminium.AluminiumLookAndFeel");
-        } catch (Exception e) {
-            // TODO: handle exception
-            e.printStackTrace();
-        }
-        new ManualSignal();
-    }
+//    public static void main(String[] args) {
+//        try {
+//            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+//            UIManager.setLookAndFeel("com.jtattoo.plaf.aluminium.AluminiumLookAndFeel");
+//        } catch (Exception e) {
+//            // TODO: handle exception
+//            e.printStackTrace();
+//        }
+//        new ManualSignal();
+//    }
     public ManualSignal() {
 
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -67,6 +70,18 @@ public class ManualSignal extends JFrame {
         lblNewLabel.setFont(new Font("Tempus Sans ITC", Font.BOLD, 36));
         lblNewLabel.setBounds(43, 20, 335, 56);
         panel_2.add(lblNewLabel);
+        
+        JButton btnNewButton = new JButton("BACK");
+        btnNewButton.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		dis(e);
+        	}
+        });
+        btnNewButton.setForeground(Color.WHITE);
+        btnNewButton.setBackground(Color.BLACK);
+        btnNewButton.setFont(new Font("Tempus Sans ITC", Font.BOLD, 22));
+        btnNewButton.setBounds(155, 98, 125, 47);
+        panel_2.add(btnNewButton);
 
         JPanel panel_3 = new JPanel();
         panel_3.setBackground(new Color(0, 128, 0));
@@ -180,5 +195,11 @@ public class ManualSignal extends JFrame {
         contentPane.add(lblNewLabel_1_3);
         this.setVisible(true);
     }
-
+	protected void dis(ActionEvent e) {
+		// TODO Auto-generated method stub
+		SignalDisplay sdp = new SignalDisplay();
+		sdp.setVisible(true);
+		this.dispose();
+		
+	}
 }
